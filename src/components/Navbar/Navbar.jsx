@@ -9,7 +9,7 @@ const Navbar = () => {
     <>
       <h1 className="flex text-6xl text-center justify-center">
         KINAU
-        <FaOpencart />
+        <FaOpencart className="text-[#a32b06]" />
       </h1>
       <div className="flex justify-evenly text-2xl pt-4 lg:justify-center gap-8 ">
       <h1 className="text-3xl font-bold "><RxHamburgerMenu className="lg:hidden"  /></h1>
