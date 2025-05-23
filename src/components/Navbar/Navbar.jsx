@@ -14,7 +14,7 @@ const Navbar = () => {
       <div className="flex justify-evenly text-2xl pt-4 lg:justify-center gap-8 ">
       <h1 className="text-3xl font-bold "><RxHamburgerMenu className="lg:hidden"  /></h1>
       <div className="hidden lg:flex gap-8">
-        <ul className="flex  gap-8">
+        <ul className="flex text-base gap-8">
           <li>
           About Us
           </li>
