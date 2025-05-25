@@ -8,7 +8,7 @@ import { FaOpencart } from "react-icons/fa";
 const Footer = () => {
   return (
     <>
-    <div className='flex flex-wrap gap-8  bg-[#f5f5f5] lg:ml-4 justify-evenly'>
+    <div className='lg:flex gap-8 bg-[#f5f5f5] p-6  justify-evenly '>
       
       <div>
         <h1 className="flex text-6xl text-center justify-center">
@@ -58,7 +58,7 @@ const Footer = () => {
       <FaInstagram />
       </div>
     </div>
-    <div className='text-center pt-4'>Copy Right © 2025.All Rights Reserved KINAU. </div>
+    <div className='text-center p-3'>Copy Right © 2025.All Rights Reserved KINAU. </div>
     </>
   )
 }

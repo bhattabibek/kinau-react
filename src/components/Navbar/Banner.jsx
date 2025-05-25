@@ -1,4 +1,5 @@
 import React from "react";
+import { GrShop } from "react-icons/gr";
 
 const Banner = () => {
   return (
@@ -16,9 +17,10 @@ const Banner = () => {
           Kinau.com is an online market place <br />
           for all types of products delievered to your Doorstep, fast and easy!{" "}
         </p>
-        <button className="sm:hidden lg:block text-xl rounded-4xl p-3 bg-[#FF5722] hover:bg-[#D84315] text-white">
-          SHOP NOW
-        </button>
+        <button className="flex items-center gap-2 sm:hidden lg:flex text-xl rounded-3xl p-3 bg-[#FF5722] hover:bg-[#D84315] text-white">
+  <GrShop />
+  <span>SHOP NOW</span>
+</button>
       </div>
     </div>
   );

@@ -4,6 +4,7 @@ import Navbar from "./components/Navbar/Navbar";
 import Topbar from "./components/Topbar";
 import Banner from "./components/Navbar/banner";
 import Footer from "./components/Footer";
+import Product from "./components/Product";
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
       <Topbar/>
       <Navbar />
       <Banner/>
+      <Product/>
       <Footer/>
       
     
