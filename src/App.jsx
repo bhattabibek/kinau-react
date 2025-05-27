@@ -6,17 +6,21 @@ import Banner from "./components/Navbar/banner";
 import Footer from "./components/Footer";
 import Product from "./components/Product";
 import NewAddition from "./components/NewAddition";
+import Login from "./pages/Login";
+import Register from "./pages/Register";
 
 function App() {
   return (
     <>
-      <Topbar/>
+      {/* <Topbar/>
       <Navbar />
       <Banner/>
       <Product/>
       <NewAddition/>
-      <Footer/>
+      <Footer/> */}
       
+      {/* <Login/> */}
+      <Register/>
     
     </>
   );
