@@ -1,10 +1,12 @@
 import React from 'react'
 import { IoLogoGooglePlaystore } from "react-icons/io5";
+import { SiVisa } from "react-icons/si";
 import { FaApple } from "react-icons/fa";
 import { FaFacebook } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { FaInstagram } from "react-icons/fa";
 import { FaOpencart } from "react-icons/fa";
+import { SiMastercard } from "react-icons/si";
 const Footer = () => {
   return (
     <>
@@ -53,10 +55,16 @@ const Footer = () => {
       </div>
      
       <div className='flex text-2xl text-center p-3'>
-      <FaFacebook />
+      <FaFacebook className='text-[#0766ff]' />
       <FaXTwitter />
-      <FaInstagram />
+      <FaInstagram className='text-[#f72628]' />
       </div>
+      <div className='flex text-2xl  gap-3 text-center p-3'>
+      <SiVisa  className='text-[#101273] text-4xl' />
+      <SiMastercard className='text-[#f47018] text-4xl' />
+      </div>
+
+      
     </div>
     <div className='text-center p-3'>Copy Right © 2025.All Rights Reserved KINAU. </div>
     </>

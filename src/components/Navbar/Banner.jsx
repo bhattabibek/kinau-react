@@ -3,7 +3,7 @@ import { GrShop } from "react-icons/gr";
 
 const Banner = () => {
   return (
-    <div className="lg:flex">
+    <div className="lg:flex m-40">
       <div>
         <img
           className="w-full lg:w-[1000px]"

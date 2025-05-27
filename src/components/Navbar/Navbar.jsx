@@ -7,7 +7,8 @@ import { FaRegHeart } from "react-icons/fa";
 const Navbar = () => {
   return (
     <>
-      <h1 className="flex text-6xl text-center justify-center">
+    <div className="top-10 left-0 fixed bg-white z-50 w-full">
+      <h1 className="flex text-6xl text-center justify-center ">
         KINAU
         <FaOpencart className="text-[#a32b06]" />
       </h1>
@@ -35,7 +36,7 @@ const Navbar = () => {
       <h1><BsCart3 /></h1>
       <h1><FaRegHeart /></h1>
       </div>
-     
+      </div>
     </>
   );
 };
