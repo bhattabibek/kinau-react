@@ -36,6 +36,7 @@ const Login = () => {
         >
           <input
             type="email"
+            name="email"
             placeholder="Enter Your Email"
             value={formik.values.email}
             className="w-full px-4 py-2 border border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
@@ -47,6 +48,7 @@ const Login = () => {
   )}
           <input
             type="password"
+            name="password"
             placeholder="Enter your password"
             value={formik.values.password}
             className='w-full px-4 py-2 border border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"'
