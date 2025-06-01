@@ -18,10 +18,9 @@ function App() {
       <Product/>
       <NewAddition/>
       <Footer/> */}
-      
-      {/* <Login/> */}
-      <Register/>
-    
+
+      <Login/>
+      {/* <Register /> */}
     </>
   );
 }
