@@ -1,23 +1,22 @@
-// src/layouts/RootLayout.jsx
 import React from "react";
-import { Outlet } from "react-router-dom";
-import Navbar from "../components/Navbar/Navbar";
 import Topbar from "../components/Topbar";
+import Navbar from "../components/Navbar/Navbar";
 import Banner from "../components/Navbar/banner";
+import Product from "../components/Product";
 import Footer from "../components/Footer";
 
+import { Outlet } from 'react-router-dom';
+ 
 const RootLayout = () => {
   return (
     <>
       <Topbar />
       <Navbar />
-      <Banner />
-      
-      {/* This is where nested route components like Login or Register will render */}
+      <Banner/>
+      <Product/>
       <main>
-        <Outlet />
+        <Outlet/>
       </main>
-
       <Footer />
     </>
   );
