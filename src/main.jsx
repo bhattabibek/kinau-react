@@ -6,12 +6,14 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import RootLayout from './layouts/RootLayout.jsx';
 import Login from './pages/Login.jsx';
 import Register from './pages/Register.jsx';
+import ProductList from './components/ProductList.jsx';
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <RootLayout />,
     children: [
+      { index: true, element: <ProductList /> },
       { path: "login", element: <Login /> },
       { path: "register", element: <Register /> },
     ],
