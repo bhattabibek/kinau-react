@@ -1,5 +1,6 @@
 import React from "react";
 import { GrShop } from "react-icons/gr";
+import {motion} from 'framer-motion';
 
 const Banner = () => {
   return (
@@ -17,10 +18,15 @@ const Banner = () => {
           Kinau.com is an online market place <br />
           for all types of products delievered to your Doorstep, fast and easy!{" "}
         </p>
-        <button className="flex items-center gap-2 sm:hidden lg:flex text-xl rounded-3xl p-3 bg-[#FF5722] hover:bg-[#D84315] text-white">
+        <motion.button
+      whileHover={{ scale: 1.05, backgroundColor: '#1565c0' }}
+      transition={{ type: 'spring', stiffness: 300 }}
+      className="flex items-center gap-2 cursor-pointer sm:hidden lg:flex text-xl rounded-3xl p-3 bg-[#FF5722] hover:bg-[#D84315] text-white"
+    >
+       
   <GrShop />
   <span>SHOP NOW</span>
-</button>
+</motion.button>
       </div>
     </div>
   );

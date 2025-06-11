@@ -5,6 +5,7 @@ import { BsCart3 } from "react-icons/bs";
 import { FaRegHeart } from "react-icons/fa";
 
 
+
 const Navbar = () => {
   return (
     <>

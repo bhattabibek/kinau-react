@@ -1,9 +1,11 @@
 import React from "react";
+import {useNavigate } from "react-router-dom";
 import { FaOpencart } from "react-icons/fa";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 
 const Register = () => {
+  const navigate = useNavigate();
   const validationSchema = Yup.object({
     email: Yup.string().email("Invalid email").required("Email is needed"),
     password: Yup.string()  // fixed typo here: was 'paswword'
@@ -23,7 +25,10 @@ const Register = () => {
     validationSchema: validationSchema,
 
     onSubmit: (values) => {
-      console.log("values", values);
+      const existingUsers = JSON.parse(localStorage.getItem("users")) || []
+      existingUsers.push(values)
+      localStorage.setItem("users",JSON.stringify(existingUsers));
+      navigate("/login");
     },
   });
 
@@ -92,7 +97,7 @@ const Register = () => {
       </h2>
 
       <h2 className="underline text-center">
-        Already Have an Account? <span className="text-amber-600">Sign In</span>
+        Already Have an Account? <span className="text-amber-600 cursor-pointer" onClick={()=>navigate("/login")}>Sign In</span>
       </h2>
     </div>
   );
