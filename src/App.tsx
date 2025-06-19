@@ -10,7 +10,7 @@ import ProductList from "./components/ProductList";
 const RootLayout = () => {
   return (
     <>
-      <Topbar />
+      {/* <Topbar /> */}
       <Navbar />
       <Banner />
       <ProductList/>

@@ -3,10 +3,10 @@ import { createRoot } from 'react-dom/client';
 import './index.css';
 import React from 'react';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import RootLayout from './layouts/RootLayout.jsx';
-import Login from './pages/Login.jsx';
-import Register from './pages/Register.jsx';
-import ProductList from './components/ProductList.jsx';
+import RootLayout from './layouts/RootLayout.js';
+import Login from './pages/Login.js';
+import Register from './pages/Register.js';
+import ProductList from './components/ProductList.js';
 
 const router = createBrowserRouter([
   {
