@@ -9,8 +9,9 @@ import { Outlet } from 'react-router-dom';
 const RootLayout = () => {
   return (
     <>
-      <Topbar />
-      <Navbar />
+    <Topbar/>
+    <Navbar/>
+      
       <Banner />
       <Product />
       <main>
