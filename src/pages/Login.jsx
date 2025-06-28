@@ -2,7 +2,6 @@ import React from "react";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import { useNavigate } from "react-router-dom";
-
 import { FaOpencart } from "react-icons/fa";
 
 const validationSchema = Yup.object({
@@ -23,19 +22,22 @@ const Login = () => {
       password: "",
     },
     validationSchema,
-
     onSubmit: async (values, { setSubmitting, setErrors }) => {
       try {
-        const res = await fetch("http://localhost:5000/api/auth/login", {
+        const res = await fetch("http://localhost:8000/api/auth/login", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
+          
           },
+            credentials: 'include',
+           // optional: use if you're setting cookies
           body: JSON.stringify({
-            // Adjust your backend to accept email or username accordingly
-            username: values.email,
+            email: values.email, // ✅ use `email` if your backend expects it
             password: values.password,
           }),
+            
+          
         });
 
         const data = await res.json();
@@ -46,7 +48,6 @@ const Login = () => {
           alert("Login successful!");
           navigate("/dashboard");
         } else {
-          // Handle error message from backend
           setErrors({ password: data.msg || "Login failed" });
         }
       } catch (error) {
@@ -59,49 +60,54 @@ const Login = () => {
   });
 
   return (
-    <>
-      <div className="p-4 md:mx-28 lg:mx-120">
-        <h1 className="flex text-6xl text-center justify-center ">
-          KINAU
-          <FaOpencart className="text-[#a32b06]" />
-        </h1>
-        <form onSubmit={formik.handleSubmit} className="flex flex-col m-7 gap-6">
-          <input
-            type="email"
-            name="email"
-            placeholder="Enter Your Email"
-            value={formik.values.email}
-            className="w-full px-4 py-2 border border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-            onChange={formik.handleChange}
-            onBlur={formik.handleBlur}
-          />
-          {formik.touched.email && formik.errors.email && (
-            <div style={{ color: "red" }}>{formik.errors.email}</div>
-          )}
+    <div className="p-4 md:mx-28 lg:mx-60">
+      <h1 className="flex text-6xl text-center justify-center items-center gap-2">
+        KINAU <FaOpencart className="text-[#a32b06]" />
+      </h1>
 
-          <input
-            type="password"
-            name="password"
-            placeholder="Enter your password"
-            value={formik.values.password}
-            className="w-full px-4 py-2 border border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-            onChange={formik.handleChange}
-            onBlur={formik.handleBlur}
-          />
-          {formik.touched.password && formik.errors.password && (
-            <div style={{ color: "red" }}>{formik.errors.password}</div>
-          )}
+      <form
+        onSubmit={formik.handleSubmit}
+        className="flex flex-col m-7 gap-6 max-w-md mx-auto"
+      >
+        <input
+          type="email"
+          name="email"
+          placeholder="Enter Your Email"
+          value={formik.values.email}
+          onChange={formik.handleChange}
+          onBlur={formik.handleBlur}
+          className="w-full px-4 py-2 border border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+        />
+        {formik.touched.email && formik.errors.email && (
+          <div className="text-red-500 text-sm">{formik.errors.email}</div>
+        )}
 
-          <button
-            type="submit"
-            className="bg-[#1976D2] rounded-4xl px-4 p-4 text-white"
-          >
-            Login
-          </button>
-        </form>
-        <div className="text-center underline">Forgot your Password?</div>
+        <input
+          type="password"
+          name="password"
+          placeholder="Enter Your Password"
+          value={formik.values.password}
+          onChange={formik.handleChange}
+          onBlur={formik.handleBlur}
+          className="w-full px-4 py-2 border border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+        />
+        {formik.touched.password && formik.errors.password && (
+          <div className="text-red-500 text-sm">{formik.errors.password}</div>
+        )}
+
+        <button
+          type="submit"
+          disabled={formik.isSubmitting}
+          className="bg-[#1976D2] rounded-full px-4 py-3 text-white hover:bg-[#1565C0] transition"
+        >
+          {formik.isSubmitting ? "Logging in..." : "Login"}
+        </button>
+      </form>
+
+      <div className="text-center underline text-blue-700 cursor-pointer">
+        Forgot your password?
       </div>
-    </>
+    </div>
   );
 };
 

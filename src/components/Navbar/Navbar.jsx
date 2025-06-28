@@ -3,7 +3,10 @@ import { useSelector } from "react-redux";
 import { FaOpencart, FaRegHeart } from "react-icons/fa";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { BsCart3 } from "react-icons/bs";
-import { selectTotalQuantity } from '../../features/cart/cartSlice';
+
+
+
+import { selectTotalQuantity } from "../../features/cart/cartSlice";
 
 const Navbar = () => {
   const totalQuantity = useSelector(selectTotalQuantity);
@@ -27,19 +30,35 @@ const Navbar = () => {
               <li>FAQ</li>
             </ul>
           </div>
-          <div className="relative">
-            <h1>
+          <div className="relative flex items-center gap-6">
+            <div style={{ position: 'relative', cursor: 'pointer', fontSize: '24px' }}>
               <BsCart3 />
+              {totalQuantity > 0 && (
+                <span
+                  style={{
+                    position: 'absolute',
+                    top: '-6px',
+                    right: '-10px',
+                    backgroundColor: 'red',
+                    color: 'white',
+                    borderRadius: '50%',
+                    padding: '2px 6px',
+                    fontSize: '12px',
+                    fontWeight: 'bold',
+                    minWidth: '20px',
+                    textAlign: 'center',
+                    lineHeight: '1',
+                    pointerEvents: 'none',
+                  }}
+                >
+                  {totalQuantity}
+                </span>
+              )}
+            </div>
+            <h1>
+              <FaRegHeart />
             </h1>
-            {totalQuantity > 0 && (
-              <span className="absolute -top-2 -right-2 bg-red-600 rounded-full text-xs w-5 h-5 flex items-center justify-center text-white font-bold">
-                {totalQuantity}
-              </span>
-            )}
           </div>
-          <h1>
-            <FaRegHeart />
-          </h1>
         </div>
       </div>
     </>

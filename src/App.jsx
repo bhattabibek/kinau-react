@@ -1,28 +1,24 @@
-// src/layouts/RootLayout.jsx
-import React from "react";
-import { Outlet } from "react-router-dom";
-import Navbar from "../components/Navbar/Navbar";
-import Topbar from "../components/Topbar";
-import Banner from "../components/Navbar/Banner"; // ✅ Fixed case
-import Footer from "../components/Footer";
-import ProductList from "./components/ProductList";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import RootLayout from "./layouts/RootLayout";
+import Login from "./pages/Login";
+import Register from "./pages/Register";
+import Home from "./pages/Home";
+import ProductList from "./components/ProductList";  // make sure this path is correct
 
-const RootLayout = () => {
+function App() {
   return (
-    <>
-      {/* <Topbar /> */}
-      <Navbar />
-      <Banner />
-      <ProductList/>
-      
-      {/* This is where nested route components like Login or Register will render */}
-      <main>
-        <Outlet />
-      </main>
-
-      <Footer />
-    </>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<RootLayout />}>
+          <Route index element={<Home />} />               {/* renders at "/" */}
+          <Route path="login" element={<Login />} />       {/* renders at "/login" */}
+          <Route path="register" element={<Register />} /> {/* renders at "/register" */}
+          <Route path="product" element={<ProductList />} />{/* renders at "/product" */}
+          {/* add more nested routes here */}
+        </Route>
+      </Routes>
+    </BrowserRouter>
   );
-};
+}
 
-export default RootLayout;
+export default App;

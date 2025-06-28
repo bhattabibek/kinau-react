@@ -1,22 +1,20 @@
 import React from "react";
-import Topbar from "../components/Topbar";
+import { Outlet } from "react-router-dom";
 import Navbar from "../components/Navbar/Navbar";
-import Banner from "../components/Navbar/Banner"; // Capitalized 'Banner' to match component convention
-import Product from "../components/Product";
+import Topbar from "../components/Topbar";
+import Banner from "../components/Navbar/Banner";
 import Footer from "../components/Footer";
-import { Outlet } from 'react-router-dom';
+import ProductList from "../components/ProductList";
 
 const RootLayout = () => {
   return (
     <>
-    <Topbar/>
-    <Navbar/>
-      
+      <Topbar />
+      <Navbar />
       <Banner />
-      <Product />
-      <main>
-        <Outlet />
-      </main>
+    <ProductList/>
+      <Outlet />
+
       <Footer />
     </>
   );
