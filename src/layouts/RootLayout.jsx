@@ -5,6 +5,9 @@ import Topbar from "../components/Topbar";
 import Banner from "../components/Navbar/Banner";
 import Footer from "../components/Footer";
 import ProductList from "../components/ProductList";
+import Cart from "../pages/Cart";
+import Checkout from "../pages/Checkout";
+import Dashboard from "../pages/Dashboard";
 
 const RootLayout = () => {
   return (
@@ -12,9 +15,13 @@ const RootLayout = () => {
       <Topbar />
       <Navbar />
       <Banner />
-    <ProductList/>
-      <Outlet />
+           <Cart/>
+           <Dashboard/>
+      <Checkout/>
+ 
+      <ProductList/>
 
+      <Outlet />
       <Footer />
     </>
   );
