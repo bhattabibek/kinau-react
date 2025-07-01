@@ -15,10 +15,6 @@ const RootLayout = () => {
       <Topbar />
       <Navbar />
       <Banner />
-           <Cart/>
-           <Dashboard/>
-      <Checkout/>
- 
       <ProductList/>
 
       <Outlet />
